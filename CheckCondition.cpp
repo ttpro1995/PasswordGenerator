@@ -10,6 +10,8 @@ using namespace std;
 
 ::CheckCondition::CheckCondition()
 {
+	numofChar = 0;
+	numofDigit = 0;
 	lower = false;
 	upper = false;
 	digit = false;
@@ -77,4 +79,21 @@ bool ::CheckCondition::CheckIt(char Pass[])
 	bool x;
 	x=process();
 	return x;
+}
+
+void ::CheckCondition::showStat()
+{
+	for (int i = 0; i < strlen(word); i++)
+	{
+		if (IsDisgit(word[i])) numofDigit++;
+		if (isCharacter(word[i])) numofChar++;
+	}
+
+	cout << "\n";
+	cout << "Password Stat  \n"
+		<< "Digit : " << numofDigit << endl
+		<< "Character : " << numofChar << endl;
+	numofChar = 0;
+	numofDigit = 0;
+
 }

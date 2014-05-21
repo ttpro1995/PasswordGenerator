@@ -12,6 +12,9 @@ private:
 	bool halfcharacter;
 	char *word;
 
+	int numofChar;
+	int numofDigit;
+
 	bool IsUpper(char x);
 	bool IsLower(char x);
 	bool IsDisgit(char x);
@@ -25,6 +28,8 @@ private:
 public:
 	CheckCondition();
 	bool CheckIt(char Pass[]);
+
+	void showStat();
 
 
 };

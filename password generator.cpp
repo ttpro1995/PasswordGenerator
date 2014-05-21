@@ -114,6 +114,7 @@ void Generateapassword()
 
 	cout << "result :\n";
 	cout << A << endl;
+	Check.showStat();
 	ofstream fout;
 	fout.open("Result.txt");
 	fout << "Result \n";
