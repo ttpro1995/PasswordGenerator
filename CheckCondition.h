@@ -23,10 +23,11 @@ private:
 
 	void in(char Pass[]);
 	bool process();
-
+	void reset();
 
 public:
 	CheckCondition();
+	~CheckCondition();
 	bool CheckIt(char Pass[]);
 
 	void showStat();

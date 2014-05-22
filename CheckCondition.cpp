@@ -16,6 +16,7 @@ using namespace std;
 	upper = false;
 	digit = false;
 	halfcharacter = false;
+	word = NULL;
 
 }
 
@@ -47,6 +48,7 @@ bool ::CheckCondition::isCharacter(char x)
 
 void::CheckCondition::in(char Pass[])
 {
+	reset();
 	word = Pass;
 
 }
@@ -95,5 +97,31 @@ void ::CheckCondition::showStat()
 		<< "Character : " << numofChar << endl;
 	numofChar = 0;
 	numofDigit = 0;
+
+}
+
+::CheckCondition::~CheckCondition()
+{
+	numofChar = 0;
+	numofDigit = 0;
+	lower = false;
+	upper = false;
+	digit = false;
+	halfcharacter = false;
+		word = NULL;
+
+}
+
+void ::CheckCondition::reset()
+{
+
+	numofChar = 0;
+	numofDigit = 0;
+	lower = false;
+	upper = false;
+	digit = false;
+	halfcharacter = false;
+		word = NULL;
+	
 
 }

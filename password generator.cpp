@@ -6,33 +6,38 @@ by Haha TTpro
 #include <iostream>
 #include <fstream>
 #include <time.h> 
-#include <stdlib.h> 
+
 #include "CheckCondition.h"
-
-
+#include "classRandom.h"
+#include "PasswordGenerator.h"
 using namespace std;
 
-void generator(char *A, int n, int choice);
-void Generateapassword();
-void menu();
-void About();
-int main()
-{
-	menu();
 
-}
 
-void generator(char *A, int n,int choice)
+void PasswordGenerator::generator(char *A, int n)
 {
 	int dice;
+	int dicechoice;
 	int getornot;
-	srand(time(NULL));
+
+
+	Random CreateRandom;
+
 	for (int i = 0; i < n; i++)
 	{
+		dicechoice = CreateRandom.random_integer(1, 3);
+		if (dicechoice == 1)
+
+			dice = CreateRandom.random_integer('A', 'Z');
+		else
+			if (dicechoice == 2)
+				dice = CreateRandom.random_integer('a', 'z');
+			else
+				if (dicechoice == 3)
+					dice = CreateRandom.random_integer('0', '9');
 		
-		dice = rand() % 74 + 48;
-		if (choice!= 1)
-		{
+		
+		/*
 			if ((dice >57) && (dice < 65))
 			{
 				i--;
@@ -43,13 +48,13 @@ void generator(char *A, int n,int choice)
 				i--;
 				continue;
 			}
-		}
+		*/
 		A[i] = dice;
 	}
 	A[n] = '\0';
 }
 
-void menu()
+void PasswordGenerator::menu()
 {
 	int x;
 	while (true)
@@ -78,7 +83,7 @@ void menu()
 }
 
 
-void About()
+void PasswordGenerator::About()
 {
 	system("cls");
 	cout << "PASSWORD GENERATOR \n"
@@ -91,25 +96,21 @@ void About()
 	system("pause");
  }
 
-void Generateapassword()
+void PasswordGenerator::Generateapassword()
 {
 	system("cls");
 	int n;
 	cout << "How long ? \n";
 	cin >> n;
-	int choice;
-	cout << "Do you want special character ? \n"
-		<<"1. yes (a-z, A-Z,0-9, @#$%^&()_+=-`[]{},./<>?, more secure but more confuse ) \n"
-		<<"0. no (a-z, A-Z,0-9) (recommended) \n";
-	cin >> choice;
+
 	char *A;//A is Pass
 	A = new char[n + 1];
-	generator(A, n,choice);
+	generator(A, n);
 
 	CheckCondition Check;
 	while (!Check.CheckIt(A))
 	{
-		generator(A, n, choice);
+		generator(A, n);
 	}
 
 	cout << "result :\n";
@@ -125,3 +126,4 @@ void Generateapassword()
 	fout.close();
 	system("pause");
 }
+
