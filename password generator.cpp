@@ -5,8 +5,8 @@ by Haha TTpro
 
 #include <iostream>
 #include <fstream>
-#include <time.h> 
-
+#include <time.h>
+#include <cstdlib> //for system("cls")
 #include "CheckCondition.h"
 #include "classRandom.h"
 #include "PasswordGenerator.h"
@@ -18,7 +18,7 @@ void PasswordGenerator::generator(char *A, int n)
 {
 	int dice;
 	int dicechoice;
-	int getornot;
+
 
 
 	Random CreateRandom;
@@ -35,20 +35,9 @@ void PasswordGenerator::generator(char *A, int n)
 			else
 				if (dicechoice == 3)
 					dice = CreateRandom.random_integer('0', '9');
-		
-		
-		/*
-			if ((dice >57) && (dice < 65))
-			{
-				i--;
-				continue;
-			}
-			if ((dice >90) && (dice < 97))
-			{
-				i--;
-				continue;
-			}
-		*/
+
+
+
 		A[i] = dice;
 	}
 	A[n] = '\0';
@@ -67,9 +56,9 @@ void PasswordGenerator::menu()
 		cin >> x;
 
 		if (x == 1)
-		
+
 			Generateapassword();
-		
+
 		else
 			if (x == 3)
 			{

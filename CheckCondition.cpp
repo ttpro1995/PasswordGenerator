@@ -4,6 +4,7 @@ by Haha TTpro
 */
 
 #include <iostream>
+#include <string.h>
 using namespace std;
 #include "CheckCondition.h"
 
@@ -70,7 +71,7 @@ bool  ::CheckCondition::process()
 	}
 
 	return false;
-	
+
 
 
 }
@@ -122,6 +123,6 @@ void ::CheckCondition::reset()
 	digit = false;
 	halfcharacter = false;
 		word = NULL;
-	
+
 
 }
