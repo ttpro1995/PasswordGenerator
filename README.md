@@ -9,3 +9,7 @@ Change wifi password once a day use this awesome software.
 To run this program, double click on 
 Password generator.exe
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ttpro1995/passwordgenerator/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
